@@ -1,0 +1,55 @@
+s = tf('s');
+sys = exp(-0.1*s);    
+sysx4 = pade(sys,8)
+
+s = tf('s');
+sys = exp(-0.1*s);    
+sysx3 = pade(sys,4)
+
+s = tf('s');
+sys = exp(-0.1*s);    
+sysx2 = pade(sys,2)
+
+s = tf('s');
+sys = exp(-0.1*s); 
+sysx1 = pade(sys,1)
+
+z1=zero(sysx1)
+p1 = pole(sysx1)
+z2=zero(sysx2)
+p2 = pole(sysx2)
+z3=zero(sysx3)
+p3 = pole(sysx3)
+z4=zero(sysx4)
+p4 = pole(sysx4)
+
+
+real_z1 = real(z1);
+imag_z1 = imag(z1);
+
+real_z2 = real(z2);
+imag_z2 = imag(z2);
+
+real_z3 = real(z3);
+imag_z3 = imag(z3);
+
+real_z4 = real(z4);
+imag_z4 = imag(z4);
+
+real_p1 = real(p1);
+imag_p1 = imag(p1);
+
+real_p2 = real(p2);
+imag_p2 = imag(p2);
+
+real_p3 = real(p3);
+imag_p3 = imag(p3);
+
+real_p4 = real(p4);
+imag_p4 = imag(p4);
+
+plot(real_z1,imag_z1,'o',real_p1,imag_p1,'x')
+plot(real_z2,imag_z2,'o',real_p2,imag_p2,'x')
+plot(real_z3,imag_z3,'o',real_p3,imag_p3,'x')
+plot(real_z4,imag_z4,'o',real_p4,imag_p4,'x')
+
