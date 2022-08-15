@@ -1,0 +1,12 @@
+%a proper% 
+bode(tf([0,1],[0,1,1]))
+%b improper%
+bode(tf([1,-1],[0,0,1]))
+%c semi proper%
+bode(tf([1,-1],[0,1,1]))
+%d improper%
+bode(tf([1,101,100],[0,1,0]))
+%e proper%
+bode(tf([0,1,0],[1,101,100]))
+%f proper%
+bode(tf([0,0,1],[1,1,1]))
