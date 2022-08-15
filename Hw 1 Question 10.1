@@ -1,0 +1,14 @@
+syms C1 C2 C3 C4 C5 Ca Cb Cc
+%the different capacitances going to each capacitance%
+eqn1= 1/(1/Ca+1/Cb)==C1+1/(1/C2+1/C3) %a to b%
+eqn2= 1/(1/Ca+1/Cc)==C2+1/(1/C1+1/C3) %a to c%
+eqn3= 1/(1/Cb+1/Cc)==C3+1/(1/C1+1/C2) %b to c%
+%storing the different equations of the capacitors
+A=solve(eqn1,eqn2,eqn3,Ca,Cb,Cc);
+B=solve(eqn1,eqn2,eqn3,C1,C2,C3);
+%simplified Ca Cb Cc
+Ca=simplify(A.Ca),Cb=simplify(A.Cb),Cc=simplify(A.Cc)
+%simplified C1 C2 C3%
+C1=simplify(B.C1),C2=simplify(B.C2),C3=simplify(B.C3)
+%total capcitance%
+simplify(1/(1/Ca + 1/(1/(1/Cb+1/C4)+(1/(1/Cc+1/C5)))))
