@@ -1,0 +1,17 @@
+syms R f Vin
+
+M = [1 0 R 0;
+    -1 0 0 R/f;
+    0 0 -1 1;
+    1 -1 0 0;]
+
+size(M)
+
+L = [Vin; 0; 0; 0]
+size(L)
+x=M\L
+
+Vneg = x(2)
+Vout=Vneg
+
+H=Vout/Vin
